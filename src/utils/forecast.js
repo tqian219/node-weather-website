@@ -4,7 +4,7 @@ const chalk = require('chalk')
 const forecast = (latitude, longtitude, callback) => { 
     const url = 'http://api.weatherstack.com/current?access_key=f9f706c68fe678dbcea3b236b93a710a&query=' + latitude + ',' + longtitude + '&units=f'
     // console.log(latitude, longtitude)
-    //  console.log(url)
+    // console.log(url)
     request ({url, json: true}, (error, { body }) => {  //(error, response)
         if (error) {
             callback('Unable to connect to locaiton services!', undefined)
