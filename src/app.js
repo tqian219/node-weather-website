@@ -15,6 +15,8 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 
 
 const app = express() //express is a web server function 
+const port = process.env.PORT || 3000 //Run application locally on port 3000 or run on Heroku with dynamic port
+
 const publicDirectoryPath = path.join(__dirname, '../public')
 
 //Setup handlebars engine and views location
@@ -109,6 +111,6 @@ app.get('*', (req, res) => {
 
 
 //Start the webserver
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port port' + port)
 })
