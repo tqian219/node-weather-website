@@ -11,6 +11,7 @@ const forecast = (latitude, longtitude, callback) => {
         } else if (body.error) {
             callback('Unable to find locaiton, Try another search.', undefined)
         } else {
+            // console.log(body.daily.data[0])  List all data properties.
             callback (undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degress out. It feels like ' + body.current.feelslike + ' degrees.' + 'The humidy is ' + body.current.humidity + '.')
         }
     })
